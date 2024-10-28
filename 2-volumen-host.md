@@ -24,17 +24,18 @@ docker run -d --name <nombre contenedor> -v <ruta carpeta host>:<ruta carpeta co
 
 ### Eliminar el contenedor
 # COMPLETAR CON EL COMANDO
-```PS C:\Users\PC> docker rm -f  f55451628425            
+```
+PS C:\Users\PC> docker rm -f  f55451628425            
 f55451628425
 PS C:\Users\PC> 
 ```
 
 ### ¿Qué sucede al crear nuevamente el mismo contenedor con volumen de tipo host a los directorios definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+#### Cualquier cambio que se realice en los archivos dentro de html se reflejará automáticamente en el servidor sin necesidad de reconstruir el contenedor, ya que el volumen enlaza la carpeta local con el contenedor.
 
 ### ¿Qué hace el comando pwd?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
-Si quieres incluir el comando pwd dentro de un comando de Docker, lo puedes hacer de diferentes maneras dependiendo del shell que estés utilizando.
+#### El comando pwd muestra la ruta completa del directorio de trabajo actual en la terminal. Es útil para saber en qué carpeta nos ubicamos y para especificar rutas en comandos de Docker o scripts de configuración, especialmente para enlazar volúmenes en Docker.
+
 
 
 ### Volumen tipo host usando PWD y PowerShell
