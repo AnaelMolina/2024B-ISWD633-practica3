@@ -20,10 +20,14 @@ docker run -d --name <nombre contenedor> -v <ruta carpeta host>:<ruta carpeta co
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+#### Al ingresar al servidor de Nginx en http://localhost, apreciamos la página web del template que hemos descargado. Nginx servirá este contenido como la nueva página principal.
 
 ### Eliminar el contenedor
 # COMPLETAR CON EL COMANDO
+```PS C:\Users\PC> docker rm -f  f55451628425            
+f55451628425
+PS C:\Users\PC> 
+```
 
 ### ¿Qué sucede al crear nuevamente el mismo contenedor con volumen de tipo host a los directorios definidos anteriormente?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
