@@ -10,13 +10,13 @@ docker run -d --name <nombre contenedor> -v <ruta carpeta host>:<ruta carpeta co
 ### Crear un volumen tipo host con la imagen nginx:alpine, mapear todos por puertos, para la ruta carpeta host colocar el directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html (esta ruta se obtiene al revisar la documentación de la imagen)
 ![Volúmenes](img/volumen-host.PNG)
 # COMPLETAR CON EL COMANDO
-``docker run -d -p 80:80 -v /c/Users/PC/Desktop/nginx/html:/usr/share/nginx/html nginx:alpine ``
+``` docker run -d -p 80:80 -v /c/Users/PC/Desktop/nginx/html:/usr/share/nginx/html nginx:alpine ```
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+##### Al momento que ingresamos al servidor de Nginx en la siguiente direccion https:localhost, nos indica el contenido del archivo index. En el cual, nos refleja en el navegador un mensaje de "Hola, este es un servidor Nginx en Docker"
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+#### El archivo index.html es servido directamente por Nginx desde el contenedor. Como se ha configurado un volumen, Nginx accede al archivo index.html desde mi carpeta local del host (C:\Users\PC\Desktop\nginx\html), y cualquier cambio en este archivo se refleja de inmediato en el servidor sin necesidad de reconstruir el contenedor.
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
