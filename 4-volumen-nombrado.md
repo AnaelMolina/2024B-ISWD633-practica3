@@ -61,7 +61,46 @@ docker run -d --name client-postgres --publish published=9500,target=80 -e PGADM
 ### Usar el cliente postgres para conectarse al servidor postgres, para la conexión usar el nombre del servidor en lugar de la dirección IP.
 
 ### Crear los volúmenes necesarios para drupal, esto se puede encontrar en la documentación
-### COMPLETAR CON LOS COMANDOS
+####
+```
+PS C:\Users\PC> docker volume create drupal_data
+drupal_data
+PS C:\Users\PC> docker volume create drupal_modules
+drupal_modules
+PS C:\Users\PC> docker volume create drupal_files
+drupal_files
+PS C:\Users\PC> docker run -d --name server-drupal --network net-drupal `
+>>     -p 9700:80 `
+>>     -v drupal_data:/var/www/html/sites/default/files `
+>>     -v drupal_modules:/var/www/html/modules `
+>>     -v drupal_files:/var/www/html/sites `
+>>     drupal:latest
+>>
+Unable to find image 'drupal:latest' locally
+latest: Pulling from library/drupal
+36d4eb215a4a: Pulling fs layer                                                                            
+36d4eb215a4a: Download complete
+afd6dcf9c5c4: Download complete
+d9c650d17537: Download complete
+8c2340e96d81: Download complete
+4f4fb700ef54: Already exists
+e09dc258c322: Download complete
+e2133690866d: Download complete
+303bb1c6136b: Download complete
+d971a9a94f20: Download complete
+6c8db7ba2fb3: Download complete
+a4e31c3cda9f: Download complete
+b9dd36c07ca0: Download complete
+d404a37f1ede: Download complete
+8dd95df71d95: Download complete
+e299a01471fd: Download complete
+cc383c045d44: Download complete
+eab50bae3de5: Download complete
+Digest: sha256:2ddf0cc0606d88b5f406c858a85ecb9ed75a03cdb70b46b325106cf91adbb50d
+Status: Downloaded newer image for drupal:latest
+c94ae5de88530952cc7cce04cf1c7cd53efb89c00c764fea0765d8d3b16c3ee8
+PS C:\Users\PC>
+```
 
 ### Crear el contenedor server-drupal vinculado a la red, usar la imagen drupal, y vincularlo a los volúmenes nombrados
 ```
