@@ -22,7 +22,8 @@ Por ejemplo, en Windows las unidades de almacenamiento (como `C:`, `D:`, etc.) a
 Cuando creas un volumen nombrado, Docker asigna un punto de montaje específico en el sistema de archivos del host para ese volumen.
 
 ### ¿Cuál es el Mountpoint de vol-postgres?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+#### Gestionada automáticamente por Docker y puede variar según el sistema.Este comando "docker volume inspect vol-postgres
+"te mostrará información detallada sobre el volumen, incluyendo su punto de montaje en el sistema de archivos del host. En la salida, busca el campo "Mountpoint", que te indicará la ubicación donde Docker ha montado el volumen vol-postgres.
 
 ### Estructura del Punto de Montaje:
 - /var/lib/docker/volumes/: Es la ubicación base donde Docker almacena todos los volúmenes en el sistema de archivos del host.
