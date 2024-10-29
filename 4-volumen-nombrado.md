@@ -115,7 +115,12 @@ docker run -d --name server-drupal --publish published=9700,target=80 -v <nombre
 
 _La instalación puede tomar varios minutos, mientras espera realice un diagrama de los contenedores que ha creado en este apartado._
 
-# COMPLETAR CON EL DIAGRAMA SOLICITADO
+### Identifica los contenedores que has creado:
+
+1.- Contenedores como server-postgres, client-postgres, server-drupal, 
+2.- Muestra la conexión de red entre los contenedores:si están conectados en la misma red, como net-drupal.
+3.- Incorpora los volúmenes: drupal_data, drupal_modules, y drupal_files
+4.- Especifica las configuraciones relevantes: pgAdmin en el puerto 9500, Drupal en el puerto 9700.
 
 ### Eliminar un volumen específico
 ```
