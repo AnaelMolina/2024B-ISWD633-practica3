@@ -22,8 +22,7 @@ Por ejemplo, en Windows las unidades de almacenamiento (como `C:`, `D:`, etc.) a
 Cuando creas un volumen nombrado, Docker asigna un punto de montaje específico en el sistema de archivos del host para ese volumen.
 
 ### ¿Cuál es el Mountpoint de vol-postgres?
-#### Gestionada automáticamente por Docker y puede variar según el sistema.Este comando "docker volume inspect vol-postgres
-"te mostrará información detallada sobre el volumen, incluyendo su punto de montaje en el sistema de archivos del host. En la salida, busca el campo "Mountpoint", que te indicará la ubicación donde Docker ha montado el volumen vol-postgres.
+#### Gestionada automáticamente por Docker y puede variar según el sistema.Este comando "docker volume inspect vol-postgres te mostrará información detallada sobre el volumen, incluyendo su punto de montaje en el sistema de archivos del host. En la salida, busca el campo "Mountpoint", que te indicará la ubicación donde Docker ha montado el volumen vol-postgres.
 
 ### Estructura del Punto de Montaje:
 - /var/lib/docker/volumes/: Es la ubicación base donde Docker almacena todos los volúmenes en el sistema de archivos del host.
@@ -40,7 +39,13 @@ docker run -d --name <nombre contenedor> -v <nombre volumen>:<ruta contenedor> <
 ```
 
 ### Crear la red net-drupal de tipo bridge
-# COMPLETAR CON EL COMANDO
+####
+```
+PS C:\Users\PC> docker network create --driver bridge net-drupal
+>>
+9e8c62dc51f3296f00c43bc51fbac6521c33fc184b2459a9a547895a80f20ac8
+PS C:\Users\PC>
+ ```
 
 ### Crear un servidor postgres vinculado a la red net-drupal, completar la ruta del contenedor
 ```
