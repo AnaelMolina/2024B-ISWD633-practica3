@@ -5,15 +5,15 @@ Si solucionó un problema presentado o utilizó otros comandos que no se mencion
 
 # Reflexión sobre los conocimientos adquiridos
 
-### Antes de realizar esta práctica, mis conocimientos sobre Docker y la configuración de contenedores para aplicaciones complejas como Drupal y PostgreSQL eran muy escasas, especialmente en cuanto a la gestión de redes y volúmenes. Sin embargo, a lo largo de la actividad, adquirí un mejor entendimiento sobre cómo conectar contenedores, configurar variables de entorno y resolver problemas comunes que surgen en el proceso. Admito que, me estanque demasiado en como hacer un index.html y sobretodo que se ejecute bien en el docker. Fue donde mas batalle, sinceramente me llevo muvho trabajo entender.
+### Antes de realizar esta práctica, mis conocimientos sobre Docker y la configuración de contenedores para aplicaciones complejas como Drupal y PostgreSQL eran muy escasas, especialmente en cuanto a la gestión de redes y volúmenes. Sin embargo, a lo largo de la actividad, adquirí un mejor entendimiento sobre cómo conectar contenedores, configurar variables de entorno y resolver problemas comunes que surgen en el proceso. Admito que, me estanque demasiado en como hacer un index.html y sobretodo que se ejecute bien en el docker. Fue donde mas batallé, sinceramente me llevo mucho trabajo entender.
 
 ### Uno de los mayores aprendizajes fue la importancia de entender la estructura de red entre contenedores y cómo Docker maneja los volúmenes para persistir datos. También comprendí mejor el uso de comandos avanzados como docker exec para acceder a los contenedores y crear directorios faltantes que causaban errores en la instalación de Drupal.
 
-Solución de problemas específicos
+## Solución de problemas
 
 Durante la práctica, enfrenté varios problemas que requirieron paciencia y múltiples intentos hasta encontrar la solución correcta y sobretodo resolverlo bien:
 
-## Errores que presente fueron>
+## Errores que presente fueron:
 
 ### nombre de contenedor en uso: Al intentar crear el contenedor server-drupal, recibi un mensaje de conflicto de nombres, y poruspuesto la solución fue detener y eliminar el contenedor existente con docker stop y docker rm.
 
