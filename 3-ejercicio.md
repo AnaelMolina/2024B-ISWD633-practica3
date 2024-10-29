@@ -49,27 +49,42 @@ Status: Downloaded newer image for wordpress:latest
 
 ### Para que persista la información es necesario conocer en dónde mysql almacena la información.
 # COMPLETAR LA SIGUIENTE ORACIÓN. REVISAR LA DOCUMENTACIÓN DE LA IMAGEN EN https://hub.docker.com/
-En el esquema del ejercicio carpeta del contenedor (a) es (COMPLETAR CON LA RUTA)
-
+En el esquema del ejercicio carpeta del contenedor (a) es /var/lib/mysql
 Ruta carpeta host: .../ejercicio3/db
 
+
 ### ¿Qué contiene la carpeta db del host?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+#### La carpeta db del host contiene los datos de MySQL, todos los archivos de la base de datos necesarios para que MySQL funcione, incluyendo tablas, índices y configuraciones de la base de datos, para que persistan incluso cuando el contenedor se detiene o elimina.
 
 ### Crear un contenedor con la imagen mysql:8  en la red net-wp, configurar las variables de entorno: MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER y MYSQL_PASSWORD
-# COMPLETAR CON EL COMANDO
+#### 
+```
+PS C:\Users\PC> docker run -d --name mysql_container --network net-wp -v ${PWD}/ejercicio3/db:/var/lib/mys docker run -d --name mysql_container --network net-wp -v ${PWD}/ejercicio3/db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root_password -e MYSQL_DATABASE=wordpress_db -e MYSQL_USER=wp_user -e MYSQL_PASSWORD=wp_password mysql:8
+57454bbb3e3ffdea9ee959862c60fd45038e5bb0b4ce508a8372811f1b89bd8c
+PS C:\Users\PC> docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS         
+         NAMES
+22d9f1dcbebf   wordpress:latest   "docker-entrypoint.s…"   40 minutes ago   Up 40 minutes   0.0.0.0:9500->80/tcp   wordpress_container
+PS C:\Users\PC> 
+```
 
 ### ¿Qué observa en la carpeta db que se encontraba inicialmente vacía?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+##### Inicialmente estaba vacía, ahora observo varios archivos y carpetas. Estos contienen los datos de MySQL, como las tablas y configuraciones de la base de datos. Estos archivos son generados automáticamente por MySQL para almacenar y gestionar la información de la base de datos de manera persistente.
 
 ### Para que persista la información es necesario conocer en dónde wordpress almacena la información.
 # COMPLETAR LA SIGUIENTE ORACIÓN. REVISAR LA DOCUMENTACIÓN DE LA IMAGEN EN https://hub.docker.com/
-En el esquema del ejercicio la carpeta del contenedor (b) es (COMPLETAR CON LA RUTA)
-
+En el esquema del ejercicio la carpeta del contenedor (b) es /var/www/html
 Ruta carpeta host: .../ejercicio3/www
 
+
 ### Crear un contenedor con la imagen wordpress en la red net-wp, configurar las variables de entorno WORDPRESS_DB_HOST, WORDPRESS_DB_USER, WORDPRESS_DB_PASSWORD y WORDPRESS_DB_NAME (los valores de estas variables corresponden a los del contenedor creado previamente)
-# COMPLETAR CON EL COMANDO
+# 
+```
+PS C:\Users\PC> docker run -d --name wordpress_container --network net-wp -p 9500:80 -v ${PWD}/ejercicio3/www:/var/www/html -e WORDPRESS_DB_HOST=mysql_container -e WORDPRESS_DB_USER=wp_user -e WORDPRESS_DB_PASSWORD=wp_password -e WORDPRESS_DB_NAME=wordpress_db wordpress:latest
+>>
+3dfbe50372d1a4e7f8fa86c01697865c366aec6cf0f205748625551b3679b4ee
+PS C:\Users\PC>
+```
 
 ### Personalizar la apariencia de wordpress y agregar una entrada
 
