@@ -90,7 +90,7 @@ PS C:\Users\PC>
 
 ### Eliminar el contenedor y crearlo nuevamente, ¿qué ha sucedido?
 
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+#### Dado que estamos usando un volumen para almacenar los datos de WordPress en la carpeta/www,las personalizaciones y entradas se mantienen debido al volumen montado. Esto demuestra que los datos están almacenados de forma persistente fuera del contenedor.
 
 
 
